@@ -1,8 +1,11 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts.css);
+@import url(../blocks/button/__button.css);
+@import url(../blocks/button/slider/__slider-button.css);
 @import url(../blocks/header/__header.css);
 @import url(../blocks/cards/__cards.css);
 @import url(../blocks/main/__main.css);
+@import url(../blocks/cards/cards__add/__cards_add.css);
 
 
 *,
@@ -22,6 +25,7 @@ html {
     rgba(29, 3, 3, 0.808), 
     rgba(10, 11, 63, 0.5) 100%
   ); 
+  background-attachment: fixed;
   color: white;
   display: flex;
   flex-direction: column;

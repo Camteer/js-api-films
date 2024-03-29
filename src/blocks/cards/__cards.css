@@ -9,31 +9,55 @@
     max-width: 1440px;
     width: 100%;
     margin-block-end: 40px;
+    
+}
+.section {
+    position: relative;
+}
+
+.card__discription {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: calc(100% - 409px);
 }
 
 .card {
     position: relative;
     display: inline-block;
-    
     color: black;
     background-color: white;
-    
     border-radius: 10px;
     margin-inline-end: 30px;
+    height: 530px;
+
+    
 }
+
 .card__title {
     font-family: "Nanum Gothic", sans-serif;
-    font-weight: 700px;
+    
     font-size: 24px;
-    padding: 5px 0 5px 5px;
+    padding: 5px ;
+    max-width: 280px;
+    width: 100%;
+    height: 100%;
+    white-space: wrap;
+    height: 100%;
+    overflow: hidden;
+
 }
+
 .card__image {
     max-width: 280px;
     width: 100%;
-    min-height: 200px;
+    min-height: 400px;
+    max-height: 400px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    object-fit: contain;
+    object-fit: cover;
     overflow: hidden;
 }
 
@@ -59,7 +83,8 @@
 
 .content__list {
     display: inline;
-    overflow-x:inherit;
+    overflow-x: inherit;
+    height: 100%; 
 }
 
 .score {
@@ -68,7 +93,6 @@
     justify-content: center;
     align-items: center;
     font-weight: 700;
-    
     z-index: 1;
     width: 40px;
     height: 40px;

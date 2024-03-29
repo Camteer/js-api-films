@@ -1,0 +1,38 @@
+.button_card{
+    position: absolute;
+    width: 50px;
+    height: 34px;
+    border: none; 
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    top: -34px;
+}
+
+.card__butto_comlited {
+    right: 5px;
+}
+
+.card__butto_later {
+    right: 60px;
+}
+
+
+.path__add {
+    stroke: black;
+}
+
+.path__see {
+    stroke: black;
+}
+
+.button_card:hover .path__see {
+    stroke: green;
+}
+
+.button_card:hover .path__add {
+    stroke: green;
+}

@@ -1,0 +1,26 @@
+.button__slider {
+    position: absolute;
+    border: none; 
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.button__slider-next {
+    width: 200px;
+    right: -200px;
+    top: 0;
+    bottom: 40px;
+}
+
+.button__slider-before {
+    width: 200px;
+    left: -200px;
+    top: 0;
+    bottom: 40px;
+}
+
+.button__slider:hover {
+    background-color: rgba(148, 59, 59, 0.527);
+
+}
