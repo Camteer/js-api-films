@@ -1,0 +1,50 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts.css);
+@import url(../blocks/header/__header.css);
+@import url(../blocks/cards/__cards.css);
+@import url(../blocks/main/__main.css);
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  block-size: 100%;
+}
+
+.page {
+  background: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 1) 10%,
+    rgba(29, 3, 3, 0.808), 
+    rgba(10, 11, 63, 0.5) 100%
+  ); 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset,
+article {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+

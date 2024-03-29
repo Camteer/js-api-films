@@ -1,0 +1,80 @@
+.section__logo {
+    padding-bottom: 20px;
+}
+
+.cards__containers {
+    display: flex;
+    overflow-y: hidden;
+    white-space: nowrap;
+    max-width: 1440px;
+    width: 100%;
+    margin-block-end: 40px;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    
+    color: black;
+    background-color: white;
+    
+    border-radius: 10px;
+    margin-inline-end: 30px;
+}
+.card__title {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 700px;
+    font-size: 24px;
+    padding: 5px 0 5px 5px;
+}
+.card__image {
+    max-width: 280px;
+    width: 100%;
+    min-height: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.card__genres {
+    flex-wrap: wrap;
+    max-width: 280px;
+    max-height: 30px;
+    overflow: hidden;
+    display: flex;
+    padding: 5px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    gap: 10px;
+}
+
+.card__genres-item {
+    color: white;
+    background-color: black;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.content__list {
+    display: inline;
+    overflow-x:inherit;
+}
+
+.score {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 50%;
+    font-size: 24px;
+    top: 10px;
+    left: 10px;
+}
