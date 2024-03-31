@@ -10,6 +10,9 @@
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
     top: -34px;
+    transition: transform 0.3s 0.2s;
+    z-index: -2;
+    transform: translateY(100%);
 }
 
 .card__butto_comlited {
@@ -36,3 +39,7 @@
 .button_card:hover .path__add {
     stroke: green;
 }
+
+.card:hover .button_card {
+    transform: translateY(0);
+  }
