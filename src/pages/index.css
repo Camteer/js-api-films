@@ -6,7 +6,7 @@
 @import url(../blocks/cards/__cards.css);
 @import url(../blocks/main/__main.css);
 @import url(../blocks/cards/cards__add/__cards_add.css);
-
+@import url(../blocks/popup/popup.css);
 
 *,
 *::before,

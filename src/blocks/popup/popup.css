@@ -1,0 +1,73 @@
+@import url('./_is-animated/popup_is-animated.css');
+@import url('./_is-opened/popup_is-opened.css');
+
+
+.popup {
+  font-family: 'Inter', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.popup__content {
+  padding: 40px;
+  gap: 40px;
+  display: grid;
+  width: 1000px;
+  height: 800px;
+  background-color: black;
+  border-radius: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 12% 50% ;
+  grid-template-areas:
+    "image title title"
+    "image info info"
+    "video info info";
+}
+
+.popup__image {
+  width: 100%;
+  
+  grid-area: image;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.popup__title {
+  grid-area: title;
+  font-size: 40px;
+}
+
+.popup__info {
+  grid-area: info;
+
+}
+
+.popup__info-title {
+  font-size: 24px;
+}
+
+.popup__video {
+  grid-area: video;
+}
+
+.popup__info-list {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popup__info-list-item {
+  display: grid;
+  grid-template-columns: 40% 60% ;
+  
+}
