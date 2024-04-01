@@ -33,13 +33,17 @@
 }
 
 .button_card:hover .path__see {
-    stroke: green;
+    stroke: gold;
 }
 
 .button_card:hover .path__add {
-    stroke: green;
+    stroke: gold;
 }
 
 .card:hover .button_card {
     transform: translateY(0);
-  }
+}
+
+.button__green {
+    stroke: green;
+}

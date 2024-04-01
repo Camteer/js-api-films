@@ -104,3 +104,23 @@
     top: 10px;
     left: 10px;
 }
+
+.score-gold {
+    border: 2px solid gold;
+    color: gold;
+}
+
+.score-green {
+    border: 2px solid green;
+    color: green;
+}
+
+.score-orange {
+    border: 2px solid orangered;
+    color: orangered;
+}
+
+.score-red {
+    border: 2px solid red;
+    color: red;
+}
