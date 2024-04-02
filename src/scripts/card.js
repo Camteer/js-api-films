@@ -149,20 +149,51 @@ function addToWatched(data) {
   localStorage.setItem(key.watched, JSON.stringify(a));
 }
 
-function setScore (scored, cardElement) {
-  const score = parseFloat(scored);
-  const scoreSection = cardElement.querySelector('.score'); 
-  if (score >= 8.5) {
-    scoreSection.classList.add('score-gold');
-  } else if (score >= 7.0) {
-    scoreSection.classList.add('score-green');
-  } else if (score >= 5) {
-    scoreSection.classList.add('score-orange');
+function setWatchLater(id, button) {
+  const watchLaterStore = localStorage.getItem(key.watchLater);
+  const a = JSON.parse(watchLaterStore);
+
+  if (
+    a.some((el) => {
+      return el.id === id;
+    })
+  ) {
+    button.classList.add("button__green");
   } else {
-    scoreSection.classList.add('score-red');
+    button.classList.remove("button__green");
   }
 }
 
+function setWatched(id, button) {
+  const watchLaterStore = localStorage.getItem(key.watched);
+  const a = JSON.parse(watchLaterStore);
+
+  if (
+    a.some((el) => {
+      return el.id === id;
+    })
+  ) {
+    button.classList.add("button__green");
+  } else {
+    button.classList.remove("button__green");
+  }
+}
+
+function setScore(scored, cardElement) {
+  const score = parseFloat(scored);
+  const scoreSection = cardElement.querySelector(".score");
+  if (score >= 8.5) {
+    scoreSection.classList.add("score-gold");
+    return;
+  } else if (score >= 7.0) {
+    scoreSection.classList.add("score-green");
+    return;
+  } else if (score >= 5) {
+    scoreSection.classList.add("score-orange");
+    return;
+  }
+  scoreSection.classList.add("score-red");
+}
 
 function addCard(data, createPopupCard) {
   const name = data.nameRu;
@@ -170,15 +201,19 @@ function addCard(data, createPopupCard) {
   const score = data.ratingKinopoisk;
   const genres = data.genres;
   const id = data.kinopoiskId;
-  
+
   const cardTemplate = document.querySelector("#card__template").content;
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
 
-  setScore (score, cardElement)
-
+  setScore(score, cardElement);
 
   const cardElementScore = cardElement.querySelector(".score");
-  cardElementScore.textContent = score;
+  if (typeof score === "number") {
+    cardElementScore.textContent = score;
+  } else {
+    cardElementScore.textContent = "-";
+  }
+
   const cardElementSrc = cardElement.querySelector(".card__image");
   cardElementSrc.setAttribute("src", link);
   const cardElementName = cardElement.querySelector(".card__title");
@@ -190,11 +225,16 @@ function addCard(data, createPopupCard) {
 
   buttonWatchLater.addEventListener("click", () => {
     addToWatchLater(data);
+    setWatchLater(id, buttonWatchLater);
   });
 
   buttonWatched.addEventListener("click", () => {
     addToWatched(data);
+    setWatched(id, buttonWatched);
   });
+
+  setWatched(id, buttonWatched);
+  setWatchLater(id, buttonWatchLater);
 
   cardElementSrc.addEventListener("mousedown", () => {
     createPopupCard(id);

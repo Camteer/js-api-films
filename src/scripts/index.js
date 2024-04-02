@@ -2,11 +2,11 @@ import "../pages/index.css";
 
 import { getPremiers, getGeners, getInfo } from "../components/api.js";
 
-import { addCard} from "./card.js";
+import { addCard, cardList} from "./card.js";
 
 import { setCloseHandlers } from "../components/modal.js";
 
-import {} from "../components/slider.js";
+import { sliderStep, xOffset} from "../components/slider.js";
 
 const cardContainer = {
   premiers: document.querySelector(".premiers").querySelector(".content__list"),
@@ -43,6 +43,35 @@ function createPopupCard(id) {
   });
 }
 
+cardList.forEach((element) => {
+  cardContainer.premiers.append(addCard(element, createPopupCard))
+});
+
+cardList.forEach((element) => {
+  cardContainer.premiers.append(addCard(element, createPopupCard))
+});
+cardList.forEach((element) => {
+  cardContainer.premiers.append(addCard(element, createPopupCard))
+});
+cardList.forEach((element) => {
+  cardContainer.premiers.append(addCard(element, createPopupCard))
+});
+
+cardList.forEach((element) => {
+  cardContainer.premiers.append(addCard(element, createPopupCard))
+});
+
+cardList.forEach((element) => {
+  cardContainer.premiers.append(addCard(element, createPopupCard))
+});
+cardList.forEach((element) => {
+  cardContainer.premiers.append(addCard(element, createPopupCard))
+});
+cardList.forEach((element) => {
+  cardContainer.premiers.append(addCard(element, createPopupCard))
+});
+
+/*
 Promise.all([
   getPremiers(),
   getGeners(3),
@@ -96,7 +125,7 @@ Promise.all([
       cardContainer.trilogy.append(addCard(element, createPopupCard));
     });
   }
-);
+);*/
 
 setCloseHandlers();
 const key = {
@@ -111,5 +140,20 @@ if (localStorage.getItem(key.watched) === null) {
 if (localStorage.getItem(key.watchLater) === null) {
   localStorage.setItem(key.watchLater, JSON.stringify([]));
 }
+const sectionOfType = document.querySelectorAll('.section');
+
+sectionOfType.forEach(section => {
+  const buttonNext = section.querySelector('.button__slider-next');
+  const buttonBefore = section.querySelector('.button__slider-before');
+  const contentList = section.querySelector('.content__list');
+  const count = contentList.childElementCount * 296
+  buttonBefore.addEventListener('click', (evt)=> {
+      sliderStep(evt, contentList)
+  })
+  buttonNext.addEventListener('click', (evt)=> {
+      sliderStep(evt, contentList, count)
+  })
+})
+
 
 export {};
