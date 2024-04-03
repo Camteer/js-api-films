@@ -3,11 +3,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1440px;
+    
     min-height: 80px;
     padding: 0 200px;
     width: 100%;
     margin-block-end: 50px;
+    left: 0;
+    top: 0;
+    position: fixed;
+    transition: transform .1s linear;
+    z-index: 3;
+    background: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 1) 60%,
+    rgba(29, 3, 3, 0.164)
+  ); 
+}
+
+.header.hide {
+    transform: translateY(-80px);
 }
 
 .logo {

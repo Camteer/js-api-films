@@ -1,6 +1,6 @@
 
-let xOffset = 0     
-function sliderStep (evt, list, count) {
+   
+function sliderStep (evt, list, count, xOffset) {
     if (evt.target.classList.contains('button__slider-before')) {
         xOffset -= 296*5
         if (xOffset <= 0) {
@@ -17,7 +17,7 @@ function sliderStep (evt, list, count) {
         }
         list.style.left = `-${xOffset}px`
     }
-    
+    return xOffset
 }
 
-export {sliderStep, xOffset}
+export {sliderStep, }

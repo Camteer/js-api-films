@@ -2,12 +2,14 @@ import "../pages/index.css";
 
 import { getPremiers, getGeners, getInfo } from "../components/api.js";
 
+import {} from '../components/header.js'
+
 import { addCard, cardList} from "./card.js";
 
 import { setCloseHandlers } from "../components/modal.js";
 
-import { sliderStep, xOffset} from "../components/slider.js";
-
+import { sliderStep} from "../components/slider.js";
+const sectionOfType = document.querySelectorAll('.section');
 const cardContainer = {
   premiers: document.querySelector(".premiers").querySelector(".content__list"),
   detective: document
@@ -43,7 +45,7 @@ function createPopupCard(id) {
   });
 }
 
-cardList.forEach((element) => {
+/*cardList.forEach((element) => {
   cardContainer.premiers.append(addCard(element, createPopupCard))
 });
 
@@ -70,29 +72,29 @@ cardList.forEach((element) => {
 cardList.forEach((element) => {
   cardContainer.premiers.append(addCard(element, createPopupCard))
 });
+*/
 
-/*
 Promise.all([
   getPremiers(),
   getGeners(3),
-  getGeners(4),
-  getGeners(5),
-  getGeners(17),
-  getGeners(13),
-  getGeners(14),
-  getGeners(24),
-  getGeners(12),
+  //getGeners(4),
+  //getGeners(5),
+  //getGeners(17),
+  //getGeners(13),
+  //getGeners(14),
+  //getGeners(24),
+  //getGeners(12),
 ]).then(
   ([
     premiers,
     crime,
-    drama,
-    detective,
-    horror,
-    comedy,
-    serials,
-    anime,
-    trilogy,
+    // drama,
+    //detective,
+    //horror,
+    //comedy,
+    //serials,
+    //anime,
+    //trilogy,
   ]) => {
     premiers.items.forEach((element) => {
       cardContainer.premiers.append(addCard(element, createPopupCard));
@@ -100,7 +102,7 @@ Promise.all([
     crime.items.forEach((element) => {
       cardContainer.crime.append(addCard(element, createPopupCard));
     });
-    drama.items.forEach((element) => {
+    /*drama.items.forEach((element) => {
       cardContainer.drama.append(addCard(element, createPopupCard));
     });
     detective.items.forEach((element) => {
@@ -123,9 +125,25 @@ Promise.all([
     });
     trilogy.items.forEach((element) => {
       cardContainer.trilogy.append(addCard(element, createPopupCard));
-    });
+    });*/
   }
-);*/
+).then (() => {
+  sectionOfType.forEach(section => {
+  const buttonNext = section.querySelector('.button__slider-next');
+  const buttonBefore = section.querySelector('.button__slider-before');
+  const contentList = section.querySelector('.content__list');
+  const count = contentList.childElementCount * 296;
+  let xOfset = 0;
+  buttonBefore.addEventListener('click', (evt)=> {
+    xOfset = sliderStep(evt, contentList, count, xOfset)
+      
+  })
+  buttonNext.addEventListener('click', (evt)=> {
+      xOfset  = sliderStep(evt, contentList, count, xOfset)
+      
+  })
+})
+});
 
 setCloseHandlers();
 const key = {
@@ -140,20 +158,9 @@ if (localStorage.getItem(key.watched) === null) {
 if (localStorage.getItem(key.watchLater) === null) {
   localStorage.setItem(key.watchLater, JSON.stringify([]));
 }
-const sectionOfType = document.querySelectorAll('.section');
 
-sectionOfType.forEach(section => {
-  const buttonNext = section.querySelector('.button__slider-next');
-  const buttonBefore = section.querySelector('.button__slider-before');
-  const contentList = section.querySelector('.content__list');
-  const count = contentList.childElementCount * 296
-  buttonBefore.addEventListener('click', (evt)=> {
-      sliderStep(evt, contentList)
-  })
-  buttonNext.addEventListener('click', (evt)=> {
-      sliderStep(evt, contentList, count)
-  })
-})
+
+
 
 
 export {};
