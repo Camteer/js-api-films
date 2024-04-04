@@ -76,7 +76,7 @@ cardList.forEach((element) => {
 
 Promise.all([
   getPremiers(),
-  getGeners(3),
+  //getGeners(3),
   //getGeners(4),
   //getGeners(5),
   //getGeners(17),
@@ -99,10 +99,10 @@ Promise.all([
     premiers.items.forEach((element) => {
       cardContainer.premiers.append(addCard(element, createPopupCard));
     });
-    crime.items.forEach((element) => {
+    /*crime.items.forEach((element) => {
       cardContainer.crime.append(addCard(element, createPopupCard));
     });
-    /*drama.items.forEach((element) => {
+    drama.items.forEach((element) => {
       cardContainer.drama.append(addCard(element, createPopupCard));
     });
     detective.items.forEach((element) => {

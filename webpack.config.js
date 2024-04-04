@@ -3,13 +3,17 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+
 module.exports = {
-  entry: { main: "./src/scripts/index.js" },
+  entry: { 'main': "./src/scripts/index.js", 
+  'later': path.join(__dirname, './src/scripts/later.js'),
+  'complited': path.join(__dirname, './src/scripts/complited.js'),},
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "main.js",
+    filename: 'js/[name].js',
     publicPath: "",
   },
+  
   mode: "development",
   devServer: {
     static: path.resolve(__dirname, "./dist"),
@@ -54,8 +58,20 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "src/index.html",
+      chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      filename: "complited.html",
+      template: 'src/pageshtml/complited.html',
+      chunks: ['complited']
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      filename: "later.html",
+      template:  'src/pageshtml/later.html',
+      chunks: ['later']
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
-  ],
-};
+  ],};
