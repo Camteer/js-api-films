@@ -108,6 +108,14 @@ const key = {
   watched: "WATCHED",
 };
 
+if (localStorage.getItem(key.watched) === null) {
+  localStorage.setItem(key.watched, JSON.stringify([]));
+}
+
+if (localStorage.getItem(key.watchLater) === null) {
+  localStorage.setItem(key.watchLater, JSON.stringify([]));
+}
+
 function addToWatchLater(data) {
   const watchLaterStore = localStorage.getItem(key.watchLater);
   const a = JSON.parse(watchLaterStore);

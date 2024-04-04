@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" id="meta_theme" content="dark light" />
     <title>Api Movie</title>
   </head>
   <body class="page">
@@ -15,12 +16,20 @@
         <li class="header__menu-item">
           <a href="later.html">Смотреть позже</a>
         </li>
-        <li>Профиль</li>
-        <li>Поиск</li>
+        <li class="header__menu-item">
+          <a href="later.html">Профиль</a>
+        </li>
+        <li class="header__menu-item">
+          <input
+            class="search"
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Поиск"
+          />
+        </li>
       </ul>
-      <button class="theme">
-        <img src="./images/light.svg" alt="">
-      </button>
+      <button class="theme-menu__button" data-theme="dark"></button>
     </header>
     <main class="main">
       <section class="section">
@@ -28,11 +37,9 @@
         <div class="premiers">
           <h2 class="section__logo">Кинопремьеры</h2>
           <article class="cards__containers">
-            <ul class="content__list">
-              
-            </ul>
+            <ul class="content__list"></ul>
           </article>
-        </div> 
+        </div>
         <button class="button__slider button__slider-next">Будущее</button>
       </section>
       <section class="section">
@@ -176,13 +183,9 @@
         </span>
       </div>
     </template>
-    <div class="popup popup__info popup_is-animated ">
+    <div class="popup popup__info popup_is-animated">
       <div class="popup__content">
-        <img
-          class="popup__image"
-          src=""
-          alt=""
-        />
+        <img class="popup__image" src="" alt="" />
         <h3 class="popup__title"></h3>
         <span class="popup__info">
           <h4 class="popup__info-title">О фильме</h4>
@@ -219,18 +222,6 @@
             </li>
           </ul>
         </span>
-        <div class="popup__video">
-          <!---->
-          <iframe
-          src=""
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-        </div>
-        
       </div>
     </div>
   </body>

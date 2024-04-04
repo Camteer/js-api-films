@@ -7,7 +7,8 @@
 @import url(../blocks/main/__main.css);
 @import url(../blocks/cards/cards__add/__cards_add.css);
 @import url(../blocks/popup/popup.css);
-
+@import url(../blocks/theme/theme.css);
+@import url(../blocks/search/search.css);
 *,
 *::before,
 *::after {
@@ -21,10 +22,10 @@ html {
 .page {
   background: linear-gradient(
     to bottom,
-    rgb(0 0 0 / 1) 10%,
-    rgba(29, 3, 3, 0.808), 
-    rgba(10, 11, 63, 0.5) 100%
-  ); 
+    var(--background-color-1),
+    var(--background-color-2),
+    var(--background-color-3)
+  );
   background-attachment: fixed;
   color: white;
   display: flex;
@@ -51,4 +52,3 @@ ul,
 ol {
   list-style: none;
 }
-

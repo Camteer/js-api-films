@@ -1,0 +1,34 @@
+@import url(./theme_dark.css);
+@import url(./theme_light.css);
+
+:root {
+  --image: url(../../images/dark.svg);
+  --background-color-1: rgb(0 0 0 / 1) 10%;
+  --background-color-2: rgba(29, 3, 3, 0.808);
+  --background-color-3: rgba(10, 11, 63, 0.5) 100%;
+  --backgraound-color-header-1: rgb(0 0 0 / 1) 60%;
+  --backgraound-color-header-2: rgba(29, 3, 3, 0.164);
+  --color-hover: rgb(128, 0, 128);
+  --background-color-popup: rgb(0, 0, 0);
+  --text-shadow-hover: rgb(57, 57, 194);
+  --color-main: white;
+  --color-search: rgba(255, 255, 255, 0.726);
+  --box-shadow: 0 0 10px rgb(247, 242, 0);
+}
+
+.theme-menu__button {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  background-image: var(--image);
+  background-size: cover;
+  background-position: center;
+  transition: box-shadow 0.3s linear;
+}
+
+.theme-menu__button:hover {
+  box-shadow: var(--box-shadow), var(--box-shadow), var(--box-shadow);
+}

@@ -1,13 +1,12 @@
-@import url('./_is-animated/popup_is-animated.css');
-@import url('./_is-opened/popup_is-opened.css');
-
+@import url("./_is-animated/popup_is-animated.css");
+@import url("./_is-opened/popup_is-opened.css");
 
 .popup {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: "Inter-Varible", Arial, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;
@@ -19,13 +18,14 @@
 .popup__content {
   padding: 40px;
   gap: 40px;
+  color: var(--color-main);
   display: grid;
   width: 1000px;
   height: 800px;
-  background-color: black;
+  background-color: var(--background-color-popup);
   border-radius: 20px;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 12% 50% ;
+  grid-template-rows: 12% 50%;
   grid-template-areas:
     "image title title"
     "image info info"
@@ -34,11 +34,10 @@
 
 .popup__image {
   width: 100%;
-  
   grid-area: image;
   object-fit: cover;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 1px solid var(--background-color-popup);
 }
 
 .popup__title {
@@ -48,7 +47,6 @@
 
 .popup__info {
   grid-area: info;
-
 }
 
 .popup__info-title {
@@ -68,6 +66,5 @@
 
 .popup__info-list-item {
   display: grid;
-  grid-template-columns: 40% 60% ;
-  
+  grid-template-columns: 40% 60%;
 }

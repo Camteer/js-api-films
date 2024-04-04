@@ -1,5 +1,5 @@
-console.log('asdfasdfas');
+console.log("asdfasdfas");
 
-window.addEventListener('click', () => {
-    console.log('fdasfas');
-})
+window.addEventListener("click", () => {
+  console.log("fdasfas");
+});

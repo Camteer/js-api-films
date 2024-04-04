@@ -1,0 +1,30 @@
+:root.theme-dark {
+  --image: url(../../images/dark.svg);
+  --background-color-1: rgb(0 0 0 / 1) 10%;
+  --background-color-2: rgba(29, 3, 3, 0.808);
+  --background-color-3: rgba(10, 11, 63, 0.5) 100%;
+  --box-shadow: 0 0 10px rgb(247, 242, 0);
+  --backgraound-color-header-1: rgb(0 0 0 / 1) 60%;
+  --backgraound-color-header-2: rgba(29, 3, 3, 0.164);
+  --color-hover: rgb(128, 0, 128);
+  --background-color-popup: rgb(0, 0, 0);
+  --text-shadow-hover: rgb(57, 57, 194);
+  --color-main: white;
+  --box-shadow: 0 0 10px rgb(247, 242, 0);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color-1: rgb(0 0 0 / 1) 10%;
+    --background-color-2: rgba(29, 3, 3, 0.808);
+    --background-color-popup: rgb(0, 0, 0);
+    --background-color-3: rgba(10, 11, 63, 0.5) 100%;
+    --box-shadow: 0 0 10px rgb(247, 242, 0);
+    --backgraound-color-header-1: rgb(0 0 0 / 1) 60%;
+    --backgraound-color-header-2: rgba(29, 3, 3, 0.164);
+    --color-hover: rgb(128, 0, 128);
+    --text-shadow-hover: rgb(57, 57, 194);
+    --color-main: white;
+    --box-shadow: 0 0 10px rgb(247, 242, 0);
+  }
+}

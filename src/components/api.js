@@ -48,4 +48,21 @@ function getInfo(id) {
     });
 }
 
+function search(string) {
+  return fetch(
+    `https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=${string}&page=1`,
+    {
+      method: "GET",
+      headers: {
+        "X-API-KEY": "95387974-0aef-471b-a1d2-00457eb43123",
+        "Content-Type": "application/json",
+      },
+    }
+  )
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json);
+    });
+}
+
 export { getPremiers, getGeners, getInfo };

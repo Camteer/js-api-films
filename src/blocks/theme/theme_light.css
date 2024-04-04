@@ -1,0 +1,15 @@
+:root.theme-light {
+  --image: url(../../images/light.svg);
+  --background-color-1: rgb(255, 255, 255) 10%;
+  --background-color-2: rgba(158, 149, 149, 0.808);
+  --background-color-3: rgba(158, 228, 224, 0.5) 100%;
+  --box-shadow: 0 0 10px rgb(253, 72, 0);
+  --backgraound-color-header-1: rgb(160, 137, 137) 40%;
+  --backgraound-color-header-2: rgb(255, 255, 255);
+  --background-color-popup: rgb(255, 255, 255);
+  --color-search: rgba(31, 26, 26, 0.726);
+  --color-hover: rgb(147, 59, 150);
+  --text-shadow-hover: rgb(194, 57, 57);
+  --color-main: black;
+  --box-shadow: 0 0 10px rgb(247, 242, 0);
+}

@@ -1,38 +1,53 @@
-
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    min-height: 80px;
-    padding: 0 200px;
-    width: 100%;
-    margin-block-end: 50px;
-    left: 0;
-    top: 0;
-    position: fixed;
-    transition: transform .1s linear;
-    z-index: 3;
-    background: linear-gradient(
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80px;
+  padding: 0 200px;
+  width: 100%;
+  margin-block-end: 50px;
+  left: 0;
+  top: 0;
+  position: fixed;
+  transition: transform 0.1s linear;
+  z-index: 3;
+  background: linear-gradient(
     to bottom,
-    rgb(0 0 0 / 1) 60%,
-    rgba(29, 3, 3, 0.164)
-  ); 
+    var(--backgraound-color-header-1),
+    var(--backgraound-color-header-2)
+  );
 }
 
 .header.hide {
-    transform: translateY(-80px);
+  transform: translateY(-80px);
 }
 
 .logo {
-    font-family: 'Rubik Scribble', sans-serif;
-    color: white;
+  font-family: "Rubik Scribble", sans-serif;
+  color: var(--color-main);
+  transition: color 0.3s linear;
 }
 
 .header__menu {
-    display: flex;
-    gap: 15px;
-    font-family: "Nanum Gothic", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
+  display: flex;
+  gap: 15px;
+  font-family: "Inter-Varible", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.header__menu-item a {
+  text-decoration: none;
+  color: var(--color-main);
+  transition: color 0.3s linear;
+}
+
+.header__menu-item {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu-item:hover a {
+  color: var(--color-hover);
+  text-shadow: 2px -2px 17px var(--text-shadow-hover);
 }

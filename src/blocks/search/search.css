@@ -1,0 +1,22 @@
+.search {
+  font-size: 20px;
+  border: none;
+  font-family: "Inter-Varible", sans-serif;
+  color: var(--color-main);
+  background-color: inherit;
+  border-top: 1px solid var(--color-main);
+  padding: 2px;
+  border-bottom: 1px solid var(--color-main);
+}
+
+.search:focus-visible {
+  outline: none;
+}
+
+.search:active {
+  border: 1px solid var(--color-main);
+}
+
+.search::placeholder {
+  color: var(--color-search);
+}

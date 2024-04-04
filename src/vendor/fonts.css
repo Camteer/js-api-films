@@ -1,29 +1,18 @@
 @font-face {
-    font-family: 'Rubik Scribble';
-    font-weight: 400;
-    font-style: normal;
-    src: url('./fonts/RubikScribble-Regular.woff2'),
-        url('./fonts/RubikScribble-Regular.woff'),
-        url('./fonts/RubikScribble-Regular.ttf');
+  font-family: "Rubik Scribble";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./fonts/RubikScribble-Regular.woff2"),
+    url("./fonts/RubikScribble-Regular.woff"),
+    url("./fonts/RubikScribble-Regular.ttf");
 }
 
 @font-face {
-    font-family: "Nanum Gothic";
-    font-weight: 700;
-    font-style: normal;
-    src: url('./fonts/NanumGothic-Bold.ttf');
-}
-
-@font-face {
-    font-family: "Nanum Gothic";
-    font-weight: 400;
-    font-style: normal;
-    src: url('./fonts/NanumGothic-Regular.ttf'); 
-}
-
-@font-face {
-    font-family: "Nanum Gothic";
-    font-weight: 800;
-    font-style: normal;
-    src: url('./fonts/NanumGothic-ExtraBold.ttf'); 
+  font-display: swap;
+  font-family: "Inter-Varible";
+  src: local("Inter-Varible"),
+    url("../vendor/fonts/Inter-Variable.woff2")
+      format("woff2 supports variations"),
+    url("../vendor/fonts/Inter-Variable.woff2") format("woff2-variations");
+  font-weight: 400 785;
 }
