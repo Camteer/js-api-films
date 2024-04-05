@@ -61,8 +61,8 @@ function search(string) {
   )
     .then((res) => res.json())
     .then((json) => {
-      console.log(json);
+      return json;
     });
 }
 
-export { getPremiers, getGeners, getInfo };
+export { getPremiers, getGeners, getInfo, search };

@@ -19,6 +19,17 @@
   position: relative;
 }
 
+.section-complited {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 30px;
+}
+
+.section-complited .card {
+  margin-inline-end: 0px;
+}
+
 .card__discription {
   position: relative;
   display: flex;

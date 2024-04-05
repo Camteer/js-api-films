@@ -12,6 +12,7 @@
   --background-color-popup: rgb(0, 0, 0);
   --text-shadow-hover: rgb(57, 57, 194);
   --color-main: white;
+  --color-strelka: rgba(255, 255, 255, 0.658);
   --color-search: rgba(255, 255, 255, 0.726);
   --box-shadow: 0 0 10px rgb(247, 242, 0);
 }

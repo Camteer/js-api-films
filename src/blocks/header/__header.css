@@ -42,6 +42,12 @@
   transition: color 0.3s linear;
 }
 
+.logo a {
+  text-decoration: none;
+  color: var(--color-main);
+  transition: color 0.3s linear;
+}
+
 .header__menu-item {
   display: flex;
   align-items: center;

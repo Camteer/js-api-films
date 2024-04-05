@@ -120,13 +120,13 @@ function addToWatchLater(data) {
   const watchLaterStore = localStorage.getItem(key.watchLater);
   const a = JSON.parse(watchLaterStore);
   const element = {
-    id: data.kinopoiskId,
+    id: data.kinopoiskId ? data.kinopoiskId : Number(data.filmId),
     total: data,
   };
 
   if (
     !a.some((el) => {
-      return el.id === data.kinopoiskId;
+      return el.id === element.id;
     })
   ) {
     a.push(element);
@@ -141,12 +141,12 @@ function addToWatched(data) {
   const watchLaterStore = localStorage.getItem(key.watched);
   const a = JSON.parse(watchLaterStore);
   const element = {
-    id: data.kinopoiskId,
+    id: data.kinopoiskId ? data.kinopoiskId : Number(data.filmId),
     total: data,
   };
   if (
     !a.some((el) => {
-      return el.id === data.kinopoiskId;
+      return el.id === element.id;
     })
   ) {
     a.push(element);
@@ -204,46 +204,48 @@ function setScore(scored, cardElement) {
 }
 
 function addCard(data, createPopupCard) {
-  const name = data.nameRu;
   const link = data.posterUrlPreview;
-  const score = data.ratingKinopoisk;
-  const genres = data.genres;
-  const id = data.kinopoiskId;
+  let name;
+  if (data.nameRu) {
+    name = data.nameRu;
+  } else if (data.nameEn) {
+    name = data.nameEn;
+  } else if (data.nameOriginal) {
+    name = data.nameOriginal;
+  }
 
+  const score = data.ratingKinopoisk
+    ? Number(data.ratingKinopoisk)
+    : Number(data.rating);
+  const genres = data.genres;
+  const id = data.kinopoiskId ? data.kinopoiskId : Number(data.filmId);
   const cardTemplate = document.querySelector("#card__template").content;
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
-
   setScore(score, cardElement);
-
   const cardElementScore = cardElement.querySelector(".score");
-  if (typeof score === "number") {
+  if (score) {
     cardElementScore.textContent = score;
   } else {
     cardElementScore.textContent = "-";
   }
-
   const cardElementSrc = cardElement.querySelector(".card__image");
   cardElementSrc.setAttribute("src", link);
   const cardElementName = cardElement.querySelector(".card__title");
   cardElementName.textContent = name;
   const cardElementGenres = cardElement.querySelector(".card__genres");
-
   const buttonWatchLater = cardElement.querySelector(".card__butto_later");
   const buttonWatched = cardElement.querySelector(".card__butto_comlited");
-
   buttonWatchLater.addEventListener("click", () => {
+    console.log(id);
     addToWatchLater(data);
     setWatchLater(id, buttonWatchLater);
   });
-
   buttonWatched.addEventListener("click", () => {
     addToWatched(data);
     setWatched(id, buttonWatched);
   });
-
   setWatched(id, buttonWatched);
   setWatchLater(id, buttonWatchLater);
-
   cardElementSrc.addEventListener("mouseup", () => {
     createPopupCard(id);
     openPopup(document.querySelector(".popup__info"));

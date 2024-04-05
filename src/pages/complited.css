@@ -1,15 +1,12 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts.css);
-@import url(../blocks/button/__button.css);
-@import url(../blocks/button/slider/__slider-button.css);
 @import url(../blocks/header/__header.css);
-@import url(../blocks/cards/__cards.css);
-@import url(../blocks/main/__main.css);
+@import url(../blocks/theme/theme.css);
 @import url(../blocks/cards/cards__add/__cards_add.css);
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/theme/theme.css);
-@import url(../blocks/search/search.css);
-@import url(../blocks/visually-hidden/visually-hidden.css);
+@import url(../blocks/cards/__cards.css);
+@import url(../blocks/main/__main.css);
+
 *,
 *::before,
 *::after {

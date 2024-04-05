@@ -1,6 +1,6 @@
 import "../pages/index.css";
 
-import { getPremiers, getGeners, getInfo } from "../components/api.js";
+import { getPremiers, getGeners, getInfo, search } from "../components/api.js";
 
 import {} from "../components/header.js";
 
@@ -8,11 +8,16 @@ import { addCard, cardList } from "./card.js";
 
 import { setCloseHandlers } from "../components/modal.js";
 
+import {} from "../components/search.js";
+
 import {} from "../components/theme.js";
 
-import { sliderStep } from "../components/slider.js";
+import { setSlider } from "../components/slider.js";
+
+const searchInput = document.querySelector("#search");
 
 const sectionOfType = document.querySelectorAll(".section");
+
 const cardContainer = {
   premiers: document.querySelector(".premiers").querySelector(".content__list"),
   detective: document
@@ -25,6 +30,9 @@ const cardContainer = {
   serials: document.querySelector(".serials").querySelector(".content__list"), // 14
   anime: document.querySelector(".anime").querySelector(".content__list"), // 24
   trilogy: document.querySelector(".trilogy").querySelector(".content__list"), // 12
+  search: document
+    .querySelector(".search-list")
+    .querySelector(".content__list"),
 };
 
 function createPopupCard(id) {
@@ -47,35 +55,6 @@ function createPopupCard(id) {
     popupListInfo[6].textContent = data.filmLength;
   });
 }
-
-/*cardList.forEach((element) => {
-  cardContainer.premiers.append(addCard(element, createPopupCard))
-});
-
-cardList.forEach((element) => {
-  cardContainer.premiers.append(addCard(element, createPopupCard))
-});
-cardList.forEach((element) => {
-  cardContainer.premiers.append(addCard(element, createPopupCard))
-});
-cardList.forEach((element) => {
-  cardContainer.premiers.append(addCard(element, createPopupCard))
-});
-
-cardList.forEach((element) => {
-  cardContainer.premiers.append(addCard(element, createPopupCard))
-});
-
-cardList.forEach((element) => {
-  cardContainer.premiers.append(addCard(element, createPopupCard))
-});
-cardList.forEach((element) => {
-  cardContainer.premiers.append(addCard(element, createPopupCard))
-});
-cardList.forEach((element) => {
-  cardContainer.premiers.append(addCard(element, createPopupCard))
-});
-*/
 
 Promise.all([
   getPremiers(),
@@ -134,19 +113,39 @@ Promise.all([
   )
   .then(() => {
     sectionOfType.forEach((section) => {
-      const buttonNext = section.querySelector(".button__slider-next");
-      const buttonBefore = section.querySelector(".button__slider-before");
-      const contentList = section.querySelector(".content__list");
-      const count = contentList.childElementCount * 310;
-      let xOfset = 0;
-      buttonBefore.addEventListener("click", (evt) => {
-        xOfset = sliderStep(evt, contentList, count, xOfset);
-      });
-      buttonNext.addEventListener("click", (evt) => {
-        xOfset = sliderStep(evt, contentList, count, xOfset);
-      });
+      setSlider(section);
     });
   });
+
+searchInput.addEventListener("click", () => {
+  cardContainer.search.innerHTML = "";
+  cardContainer.search.closest("section").classList.add("visually-hidden");
+});
+
+searchInput.addEventListener("keydown", (evt) => {
+  if (evt.key === "Enter") {
+    search(searchInput.value)
+      .then((search) => {
+        cardContainer.search
+          .closest(".search-list")
+          .querySelector(
+            ".section__logo"
+          ).textContent = `Поиск "${searchInput.value}"`;
+        search.films.forEach((element) => {
+          cardContainer.search.append(addCard(element, createPopupCard));
+        });
+        cardContainer.search
+          .closest("section")
+          .classList.remove("visually-hidden");
+      })
+      .then(() => {
+        sectionOfType.forEach((section) => {
+          setSlider(section);
+        });
+        searchInput.value = "";
+      });
+  }
+});
 
 setCloseHandlers();
 

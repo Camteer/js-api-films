@@ -5,7 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
-    <header class="header">cxzczxc</header>
+  <body class="page">
+    <header class="header">
+      <h1 class="logo">
+        <a href="http://localhost:8080/">Better when IMD</a>
+      </h1>
+      <ul class="header__menu">
+        <li class="header__menu-item">
+          <a href="#">Просмотренные</a>
+        </li>
+      </ul>
+      <button class="theme-menu__button" data-theme="dark"></button>
+    </header>
+    <main class="main">
+      <section class="section-complited"></section>
+    </main>
+
+    <template id="card__template">
+      <div class="palces__item card">
+        <span class="score"></span>
+        <img class="card__image" src="" alt="" />
+        <span class="card__discription">
+          <button class="button_card card__butto_comlited">
+            <g class="card_add">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="24" height="24" fill="none" />
+                <path
+                  class="path__add"
+                  d="M5 13.3636L8.03559 16.3204C8.42388 16.6986 9.04279 16.6986 9.43108 16.3204L19 7"
+                  stroke="#000000"
+                />
+              </svg>
+            </g>
+          </button>
+          <button class="button_card card__butto_later">
+            <g class="card_add">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_15_200)">
+                  <rect width="24" height="24" fill="none" />
+                  <circle
+                    class="path__see"
+                    cx="12"
+                    cy="13"
+                    r="2"
+                    stroke="none"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    class="path__see"
+                    d="M12 7.5C7.69517 7.5 4.47617 11.0833 3.39473 12.4653C3.14595 12.7832 3.14595 13.2168 3.39473 13.5347C4.47617 14.9167 7.69517 18.5 12 18.5C16.3048 18.5 19.5238 14.9167 20.6053 13.5347C20.8541 13.2168 20.8541 12.7832 20.6053 12.4653C19.5238 11.0833 16.3048 7.5 12 7.5Z"
+                    stroke="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_15_200">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </g>
+          </button>
+          <h3 class="card__title"></h3>
+
+          <ul class="card__genres"></ul>
+        </span>
+      </div>
+    </template>
+    <div class="popup popup__info popup_is-animated">
+      <div class="popup__content">
+        <img class="popup__image" src="" alt="" />
+        <h3 class="popup__title"></h3>
+        <span class="popup__info">
+          <h4 class="popup__info-title">О фильме</h4>
+          <ul class="popup__info-list">
+            <li class="popup__info-list-item">
+              <p class="popup__info-list-item-type">Год производства</p>
+              <p class="popup__info-list-item-value">2024</p>
+            </li>
+            <li class="popup__info-list-item">
+              <p class="popup__info-list-item-type">Страна</p>
+              <p class="popup__info-list-item-value">Россия</p>
+            </li>
+            <li class="popup__info-list-item">
+              <p class="popup__info-list-item-type">Жанр</p>
+              <p class="popup__info-list-item-value">
+                фэнтези, мелодрама, приключения, комедия
+              </p>
+            </li>
+            <li class="popup__info-list-item">
+              <p class="popup__info-list-item-type">Слоган</p>
+              <p class="popup__info-list-item-value">Илья Учитель</p>
+            </li>
+            <li class="popup__info-list-item">
+              <p class="popup__info-list-item-type">Дискрипция</p>
+              <p class="popup__info-list-item-value">2024</p>
+            </li>
+            <li class="popup__info-list-item">
+              <p class="popup__info-list-item-type">Рейтинг</p>
+              <p class="popup__info-list-item-value">2024</p>
+            </li>
+            <li class="popup__info-list-item">
+              <p class="popup__info-list-item-type">Длительность фильма</p>
+              <p class="popup__info-list-item-value">2024</p>
+            </li>
+          </ul>
+        </span>
+      </div>
+    </div>
   </body>
 </html>
