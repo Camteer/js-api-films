@@ -58,57 +58,57 @@ function createPopupCard(id) {
 
 Promise.all([
   getPremiers(),
-  getGeners(3),
-  getGeners(4),
-  getGeners(5),
-  getGeners(17),
-  getGeners(13),
-  getGeners(14),
-  getGeners(24),
-  getGeners(12),
+  // getGeners(3),
+  // getGeners(4),
+  // getGeners(5),
+  // getGeners(17),
+  // getGeners(13),
+  // getGeners(14),
+  // getGeners(24),
+  // getGeners(12),
 ])
   .then(
     ([
       premiers,
-      crime,
-      drama,
-      detective,
-      horror,
-      comedy,
-      serials,
-      anime,
-      trilogy,
+      // crime,
+      // drama,
+      // detective,
+      // horror,
+      // comedy,
+      // serials,
+      // anime,
+      // trilogy,
     ]) => {
       premiers.items.forEach((element) => {
         cardContainer.premiers.append(addCard(element, createPopupCard));
       });
-      crime.items.forEach((element) => {
-        cardContainer.crime.append(addCard(element, createPopupCard));
-      });
-      drama.items.forEach((element) => {
-        cardContainer.drama.append(addCard(element, createPopupCard));
-      });
-      detective.items.forEach((element) => {
-        cardContainer.detective.append(addCard(element, createPopupCard));
-      });
-      horror.items.forEach((element) => {
-        cardContainer.horror.append(addCard(element, createPopupCard));
-      });
-      comedy.items.forEach((element) => {
-        cardContainer.comedy.append(addCard(element, createPopupCard));
-      });
-      serials.items.forEach((element) => {
-        cardContainer.serials.append(addCard(element, createPopupCard));
-      });
-      comedy.items.forEach((element) => {
-        cardContainer.comedy.append(addCard(element, createPopupCard));
-      });
-      anime.items.forEach((element) => {
-        cardContainer.anime.append(addCard(element, createPopupCard));
-      });
-      trilogy.items.forEach((element) => {
-        cardContainer.trilogy.append(addCard(element, createPopupCard));
-      });
+      // crime.items.forEach((element) => {
+      //   cardContainer.crime.append(addCard(element, createPopupCard));
+      // });
+      // drama.items.forEach((element) => {
+      //   cardContainer.drama.append(addCard(element, createPopupCard));
+      // });
+      // detective.items.forEach((element) => {
+      //   cardContainer.detective.append(addCard(element, createPopupCard));
+      // });
+      // horror.items.forEach((element) => {
+      //   cardContainer.horror.append(addCard(element, createPopupCard));
+      // });
+      // comedy.items.forEach((element) => {
+      //   cardContainer.comedy.append(addCard(element, createPopupCard));
+      // });
+      // serials.items.forEach((element) => {
+      //   cardContainer.serials.append(addCard(element, createPopupCard));
+      // });
+      // comedy.items.forEach((element) => {
+      //   cardContainer.comedy.append(addCard(element, createPopupCard));
+      // });
+      // anime.items.forEach((element) => {
+      //   cardContainer.anime.append(addCard(element, createPopupCard));
+      // });
+      // trilogy.items.forEach((element) => {
+      //   cardContainer.trilogy.append(addCard(element, createPopupCard));
+      // });
     }
   )
   .then(() => {

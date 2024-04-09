@@ -10,6 +10,7 @@
 @import url(../blocks/theme/theme.css);
 @import url(../blocks/search/search.css);
 @import url(../blocks/visually-hidden/visually-hidden.css);
+@import url(../blocks/button/__button.css);
 *,
 *::before,
 *::after {

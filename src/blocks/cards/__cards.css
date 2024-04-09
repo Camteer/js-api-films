@@ -51,6 +51,19 @@
   z-index: 1;
 }
 
+.card:last-child {
+  margin-inline-end: 0;
+}
+
+.card-add {
+  min-width: 280px;
+  background-color: grey;
+  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card__title {
   font-family: "Inter-Varible", sans-serif;
   background-color: white;

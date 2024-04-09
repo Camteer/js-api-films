@@ -39,8 +39,8 @@ function sliderStep(button, list, sliderWidth, windowWidth, xOffset) {
 
   if (button.classList.contains("button__slider-next")) {
     xOffset += 310 * 4;
-    if (xOffset >= sliderWidth - windowWidth - 30) {
-      xOffset = sliderWidth - windowWidth - 30;
+    if (xOffset >= sliderWidth - windowWidth) {
+      xOffset = sliderWidth - windowWidth;
     }
     list.style.left = `-${xOffset}px`;
   }
