@@ -7,16 +7,19 @@
 
 .cards__containers {
   display: flex;
-  overflow-x: hidden;
+  overflow-x: scroll;
   white-space: nowrap;
   max-width: 1440px;
   scrollbar-width: none;
+  scroll-behavior: smooth;
   width: 100%;
   margin-block-end: 40px;
 }
 
 .section {
   position: relative;
+  max-width: 1440px;
+  width: 100%;
 }
 
 .section-complited {
@@ -154,4 +157,61 @@
 .score-red {
   border: 2px solid red;
   background-color: red;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+  .section {
+    max-width: 1024px;
+  }
+  .card__image {
+    min-width: 180px;
+    max-width: 180px;
+    width: 100%;
+    min-height: 300px;
+    max-height: 300px;
+    
+  }
+
+  .card__title {
+    height: 45px;
+    font-size: 18px;
+    letter-spacing: -1px;
+    overflow: hidden;
+  }
+  
+  .card {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .section {
+    max-width: 390px;
+  }
+
+  .card__image {
+    min-width: 180px;
+    max-width: 180px;
+    width: 100%;
+    min-height: 300px;
+    max-height: 300px;
+    
+  }
+
+  .card__title {
+    height: 45px;
+    font-size: 18px;
+    letter-spacing: -1px;
+    overflow: hidden;
+  }
+  
+  .card {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+  }
 }

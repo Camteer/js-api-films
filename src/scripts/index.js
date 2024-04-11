@@ -14,6 +14,8 @@ import {} from "../components/theme.js";
 
 import { setSlider } from "../components/slider.js";
 
+import { closeBurger } from "../components/search.js";
+
 const searchInput = document.querySelector("#search");
 
 const sectionOfType = document.querySelectorAll(".section");
@@ -124,6 +126,7 @@ searchInput.addEventListener("click", () => {
 
 searchInput.addEventListener("keydown", (evt) => {
   if (evt.key === "Enter") {
+    closeBurger()
     search(searchInput.value)
       .then((search) => {
         cardContainer.search

@@ -3,10 +3,10 @@
   justify-content: space-between;
   align-items: center;
   min-height: 80px;
-  padding: 0 200px;
+  max-width: 1440px;
+  justify-self: center;
   width: 100%;
   margin-block-end: 50px;
-  left: 0;
   top: 0;
   position: fixed;
   transition: transform 0.1s linear;
@@ -56,4 +56,119 @@
 .header__menu-item:hover a {
   color: var(--color-hover);
   text-shadow: 2px -2px 17px var(--text-shadow-hover);
+}
+
+.header__menu-button {
+  display: none;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.header__bar-button {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.header__bar-button span {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-main);
+  transition: transform 0.3s linear;
+}
+
+.header__bar-button::before,
+.header__bar-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-main);
+}
+
+.header__bar-button::before {
+  bottom: 100%;
+  transition: transform 0.3s linear;
+}
+
+.header__bar-button::after {
+  bottom: 0;
+  transition: transform 0.3s linear;
+}
+
+.is-open span {
+  transform: rotate(45deg);
+}
+
+.is-open::before {
+  transform: translateY(16px) rotate(45deg);
+}
+
+.is-open::after {
+  transform: translateY(-14px) rotate(-45deg);
+}
+
+@media only screen and (max-width: 1024px) {
+  .header {
+    max-width: 1024px;
+  }
+
+  .header__menu-button {
+    display: block;
+  }
+
+  .header__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    pointer-events: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .header__menu.opened-menu {
+    
+    pointer-events: all;
+    visibility: visible;
+    background: linear-gradient(
+      to bottom,
+      var(--backgraound-color-header-2),
+      var(--backgraound-color-header-1)
+    );
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+    
+    pointer-events: all;
+  }
+
+  .header__menu.opened-menu .header__menu-item{
+    margin-block-end: 30px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .header {
+    max-width: 390px;
+    width: 100%;
+  }
+
+ 
+
+  .logo {
+    font-size: 30px;
+  }
 }

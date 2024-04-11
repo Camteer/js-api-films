@@ -6,13 +6,22 @@ function setSlider(section) {
   const windowWidth = contentList.closest(".section").offsetWidth;
   let xOfset = 0;
   hiderSlider(xOfset, buttonBefore, buttonNext, sliderWidth, windowWidth);
+
+
+  section.querySelector('.cards__containers').addEventListener('scroll', () =>{
+    xOfset = section.querySelector('.cards__containers').scrollLeft
+    hiderSlider(xOfset, buttonBefore, buttonNext, sliderWidth, windowWidth);
+    
+  })
+
+  
   buttonBefore.addEventListener("click", () => {
     xOfset = sliderStep(
       buttonBefore,
       contentList,
       sliderWidth,
       windowWidth,
-      xOfset
+      xOfset, section
     );
     hiderSlider(xOfset, buttonBefore, buttonNext, sliderWidth, windowWidth);
   });
@@ -22,19 +31,19 @@ function setSlider(section) {
       contentList,
       sliderWidth,
       windowWidth,
-      xOfset
+      xOfset, section
     );
     hiderSlider(xOfset, buttonBefore, buttonNext, sliderWidth, windowWidth);
   });
 }
 
-function sliderStep(button, list, sliderWidth, windowWidth, xOffset) {
+function sliderStep(button, list, sliderWidth, windowWidth, xOffset, section) {
   if (button.classList.contains("button__slider-before")) {
     xOffset -= 310 * 4;
     if (xOffset <= 0) {
       xOffset = 0;
     }
-    list.style.left = `-${xOffset}px`;
+    section.querySelector('.cards__containers').scrollLeft = xOffset;
   }
 
   if (button.classList.contains("button__slider-next")) {
@@ -42,7 +51,7 @@ function sliderStep(button, list, sliderWidth, windowWidth, xOffset) {
     if (xOffset >= sliderWidth - windowWidth) {
       xOffset = sliderWidth - windowWidth;
     }
-    list.style.left = `-${xOffset}px`;
+    section.querySelector('.cards__containers').scrollLeft = xOffset;
   }
   return xOffset;
 }

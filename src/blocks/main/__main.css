@@ -4,7 +4,21 @@
   justify-content: space-between;
   align-items: center;
   max-width: 1440px;
-  padding: 0 100px;
+  
   margin-block-start: 80px;
   width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .main {
+    max-width: 1024px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .main {
+    max-width: 390px;
+    
+    width: 100%;
+  }
 }

@@ -6,7 +6,7 @@
   cursor: pointer;
   top: 47px;
   bottom: 40px;
-  z-index: 4;
+  z-index: 1;
   border-radius: 5px;
 }
 
@@ -51,4 +51,18 @@
 
 .strelka:hover path {
   stroke: white;
+}
+
+@media only screen and (max-width: 1024px) {
+  .main {
+    max-width: 1024px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .main {
+    max-width: 390px;
+    
+    width: 100%;
+  }
 }

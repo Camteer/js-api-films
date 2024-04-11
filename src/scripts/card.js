@@ -246,7 +246,7 @@ function addCard(data, createPopupCard) {
   });
   setWatched(id, buttonWatched);
   setWatchLater(id, buttonWatchLater);
-  cardElementSrc.addEventListener("mouseup", () => {
+  cardElementSrc.addEventListener("click", () => {
     createPopupCard(id);
     openPopup(document.querySelector(".popup__info"));
   });
