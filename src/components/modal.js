@@ -28,7 +28,10 @@ function setCloseHandlers() {
     popup.addEventListener("mousedown", (evt) => {
       if (evt.target.classList.contains("popup_is-opened")) {
         closePopup(popup);
+      } else if (evt.target.classList.contains("img-close")) {
+        closePopup(popup);
       }
+      
     });
   });
 }

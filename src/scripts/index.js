@@ -126,7 +126,7 @@ searchInput.addEventListener("click", () => {
 
 searchInput.addEventListener("keydown", (evt) => {
   if (evt.key === "Enter") {
-    closeBurger()
+    closeBurger();
     search(searchInput.value)
       .then((search) => {
         cardContainer.search
