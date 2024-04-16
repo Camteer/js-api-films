@@ -8,6 +8,7 @@ module.exports = {
     main: "./src/scripts/index.js",
     later: path.join(__dirname, "./src/scripts/later.js"),
     complited: path.join(__dirname, "./src/scripts/complited.js"),
+    acc: path.join(__dirname, "./src/scripts/acc.js")
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -72,6 +73,12 @@ module.exports = {
       filename: "later.html",
       template: "src/pageshtml/later.html",
       chunks: ["later"],
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      filename: "acc.html",
+      template: "src/pageshtml/acc.html",
+      chunks: ["acc"],
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
